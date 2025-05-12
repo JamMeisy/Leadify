@@ -1,27 +1,31 @@
 import React from 'react';
 import Link from 'next/link';
+import { Button } from './ui/button';
 
 export default function CTA() {
   return (
-    <section className="py-16 md:py-24 gradient-green text-white">
+    <section className="py-16 md:py-24 bg-[var(--neutral-100)]">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Be Part of the Change
-          </h2>
-          <p className="text-xl mb-8 text-white/90">
-            Join thousands of Filipinos who are learning to see beyond campaign tactics and make informed voting decisions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/assessment"
-              className="bg-white text-[var(--primary)] px-8 py-3 rounded-full font-medium hover:bg-[var(--neutral-100)] transition-colors inline-flex items-center justify-center"
-            >
-              Start Your Assessment
-            </Link>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-[var(--primary)] transition-colors">
-              Join Our Community
-            </button>
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center gradient-text">
+              Be Part of the Change
+            </h2>
+            <p className="text-xl mb-8 text-[var(--neutral-700)] text-center">
+              Join thousands of Filipinos who are learning to see beyond campaign tactics and make informed voting decisions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/assessment">
+                <Button size="lg">
+                  Start Your Assessment
+                </Button>
+              </Link>
+              <Link href="/candidates">
+                <Button size="lg" variant="outline">
+                  View Candidates
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

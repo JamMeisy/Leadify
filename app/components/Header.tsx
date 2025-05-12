@@ -14,6 +14,7 @@ export default function Header() {
     { href: '/#goals', label: 'Goals' },
     { href: '/#project', label: 'Project' },
     { href: '/#about', label: 'About' },
+    { href: '/candidates', label: 'Candidates' },
   ];
 
   return (
@@ -33,7 +34,9 @@ export default function Header() {
                   <Link
                       key={link.href}
                       href={link.href}
-                      className="text-[var(--neutral-700)] hover:text-[var(--primary)] font-medium transition-colors"
+                      className={`text-[var(--neutral-700)] hover:text-[var(--primary)] font-medium transition-colors ${
+                          pathname === link.href ? 'text-[var(--primary)]' : ''
+                      }`}
                   >
                     {link.label}
                   </Link>

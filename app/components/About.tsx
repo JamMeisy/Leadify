@@ -38,8 +38,8 @@ export default function About() {
           <div className={`glass rounded-lg shadow-lg p-8 ${isVisible ? 'animate-scaleIn' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
             <p className="text-lg text-[var(--neutral-800)] leading-relaxed mb-6">
               Leadify is more than just an advocacy platform—it's a movement towards a more informed and engaged democracy. 
-              Our name represents our dual mission: to <strong>Lead</strong> the conversation on voter psychology and to 
-              <strong>Amplify</strong> the voices of citizens seeking genuine political change.
+              Our name represents our dual mission: to <strong>Lead</strong> the conversation on voter psychology and to <strong>Amplify</strong> the
+               voices of citizens seeking genuine political change.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 mb-8">
