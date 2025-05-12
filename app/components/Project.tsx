@@ -1,9 +1,32 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function Project() {
   const [activeTab, setActiveTab] = useState('objectives');
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   const tabs = [
     { id: 'objectives', label: 'Objectives' },
@@ -71,12 +94,14 @@ The success of our platform will be measured through user engagement metrics, sh
   };
 
   return (
-    <section id="project" className="py-16 md:py-24">
+    <section ref={sectionRef} id="project" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Project Proposal</h2>
+        <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center gradient-text ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}>
+          Project Proposal
+        </h2>
         
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center mb-8 border-b border-[var(--border)]">
+        <div className={`flex flex-wrap justify-center mb-8 border-b border-[var(--border)] ${isVisible ? 'animate-slideIn' : 'opacity-0'}`}>
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -84,7 +109,7 @@ The success of our platform will be measured through user engagement metrics, sh
               className={`px-6 py-3 font-medium transition-colors ${
                 activeTab === tab.id
                   ? 'text-[var(--primary)] border-b-2 border-[var(--primary)]'
-                  : 'text-[var(--neutral-600)] hover:text-[var(--primary)]'
+                  : 'text-[var(--neutral-700)] hover:text-[var(--primary)]'
               }`}
             >
               {tab.label}
@@ -93,15 +118,15 @@ The success of our platform will be measured through user engagement metrics, sh
         </div>
 
         {/* Content */}
-        <div className="max-w-4xl mx-auto">
+        <div className={`max-w-4xl mx-auto ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}>
           {/* Objectives Tab */}
           {activeTab === 'objectives' && (
-            <div className="space-y-8">
+            <div className="glass p-8 rounded-xl space-y-8">
               <h3 className="text-2xl font-bold text-[var(--primary)]">{content.objectives.title}</h3>
               
               <div>
                 <h4 className="text-xl font-semibold mb-3">{content.objectives.general.title}</h4>
-                <p className="text-[var(--neutral-700)] leading-relaxed">{content.objectives.general.content}</p>
+                <p className="text-[var(--neutral-800)] leading-relaxed">{content.objectives.general.content}</p>
               </div>
               
               <div>
@@ -110,7 +135,7 @@ The success of our platform will be measured through user engagement metrics, sh
                   {content.objectives.specific.content.map((objective, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-[var(--primary)] mr-3">•</span>
-                      <span className="text-[var(--neutral-700)]">{objective}</span>
+                      <span className="text-[var(--neutral-800)]">{objective}</span>
                     </li>
                   ))}
                 </ul>
@@ -120,9 +145,9 @@ The success of our platform will be measured through user engagement metrics, sh
 
           {/* Situationer Tab */}
           {activeTab === 'situationer' && (
-            <div>
+            <div className="glass p-8 rounded-xl">
               <h3 className="text-2xl font-bold text-[var(--primary)] mb-6">{content.situationer.title}</h3>
-              <div className="text-[var(--neutral-700)] leading-relaxed space-y-4">
+              <div className="text-[var(--neutral-800)] leading-relaxed space-y-4">
                 {content.situationer.content.split('\n\n').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
@@ -132,13 +157,13 @@ The success of our platform will be measured through user engagement metrics, sh
 
           {/* Plans Tab */}
           {activeTab === 'plans' && (
-            <div>
+            <div className="glass p-8 rounded-xl">
               <h3 className="text-2xl font-bold text-[var(--primary)] mb-6">{content.plans.title}</h3>
               <ul className="space-y-4">
                 {content.plans.content.map((plan, index) => (
                   <li key={index} className="flex items-start">
                     <span className="text-[var(--primary)] font-bold mr-3">{index + 1}.</span>
-                    <span className="text-[var(--neutral-700)]">{plan}</span>
+                    <span className="text-[var(--neutral-800)]">{plan}</span>
                   </li>
                 ))}
               </ul>
@@ -147,9 +172,9 @@ The success of our platform will be measured through user engagement metrics, sh
 
           {/* Evaluation Tab */}
           {activeTab === 'evaluation' && (
-            <div>
+            <div className="glass p-8 rounded-xl">
               <h3 className="text-2xl font-bold text-[var(--primary)] mb-6">{content.evaluation.title}</h3>
-              <div className="text-[var(--neutral-700)] leading-relaxed">
+              <div className="text-[var(--neutral-800)] leading-relaxed">
                 {content.evaluation.content}
               </div>
             </div>

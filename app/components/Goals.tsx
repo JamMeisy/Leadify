@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
 
 const goals = [
   {
@@ -34,19 +36,46 @@ const goals = [
 ];
 
 export default function Goals() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="goals" className="py-16 md:py-24 bg-[var(--neutral-50)]">
+    <section ref={sectionRef} id="goals" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Our Goals</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {goals.map((goal, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow border border-[var(--border)]"
+              className={`bg-white rounded-lg shadow-md p-6 card-hover border border-[var(--border)] ${
+                isVisible ? 'animate-scaleIn' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-4xl mb-4">{goal.icon}</div>
+              <div className="text-4xl mb-4 animate-float">{goal.icon}</div>
               <h3 className="text-xl font-semibold mb-3 text-[var(--primary)]">{goal.title}</h3>
-              <p className="text-[var(--neutral-600)]">{goal.description}</p>
+              <p className="text-[var(--neutral-700)]">{goal.description}</p>
             </div>
           ))}
         </div>

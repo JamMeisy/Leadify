@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function CTA() {
   return (
@@ -12,9 +13,12 @@ export default function CTA() {
             Join thousands of Filipinos who are learning to see beyond campaign tactics and make informed voting decisions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[var(--primary)] px-8 py-3 rounded-full font-medium hover:bg-[var(--neutral-100)] transition-colors">
+            <Link 
+              href="/assessment"
+              className="bg-white text-[var(--primary)] px-8 py-3 rounded-full font-medium hover:bg-[var(--neutral-100)] transition-colors inline-flex items-center justify-center"
+            >
               Start Your Assessment
-            </button>
+            </Link>
             <button className="border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-[var(--primary)] transition-colors">
               Join Our Community
             </button>
