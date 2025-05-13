@@ -95,7 +95,7 @@ That said, this campaign does not only seek to inform voters, but also seek to c
         {
           number: '5',
           title: 'Choose Technology Stack',
-          description: 'Choose a website platform. Choose backend technologies for processing data (e.g., Python, Node.js) and those for front-end construction (e.g., React, Vue).'
+          description: 'Choose front-end and backend technologies. Choose deployment platform.'
         },
         {
           number: '6',
