@@ -52,12 +52,12 @@ export default function Mission() {
   ];
 
   return (
-    <section ref={sectionRef} id="mission" className="py-16 md:py-24 bg-white">
+    <section ref={sectionRef} id="mission" className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
-          <div className={`flex items-center gap-4 mb-8 ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}>
-            <Rocket className="w-8 h-8 text-[var(--primary)]" />
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text">Our Mission</h2>
+          <div className={`text-center mb-8 ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}>
+            <Rocket className="w-8 h-8 text-[var(--primary)] mx-auto mb-4" />
+            <h2 className="text-3xl md:text-5xl font-bold gradient-text mx-auto">Our Mission</h2>
           </div>
           
           <div className={`bg-[var(--neutral-50)] rounded-xl p-8 mb-12 ${isVisible ? 'animate-scaleIn' : 'opacity-0'}`}>

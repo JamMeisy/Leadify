@@ -4,34 +4,34 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const features = [
   {
-    icon: "🔍",
-    title: "Unbiased Analysis",
-    description: "Get objective breakdowns of campaign materials and political strategies"
+    icon: "🧠",
+    title: "Psychological Analysis",
+    description: "Expert breakdowns of campaign tactics revealing fear-based messaging and manipulation strategies"
   },
   {
-    icon: "🧠",
-    title: "Psychology Insights",
-    description: "Understand the cognitive biases and emotional triggers in political messaging"
+    icon: "🔍",
+    title: "Campaign Decoder",
+    description: "Analyze posters, speeches, and advertisements to expose hidden psychological techniques"
   },
   {
     icon: "📊",
-    title: "Interactive Tools",
-    description: "Assess your voting psychology and discover your political blind spots"
+    title: "Voting Psychology Tool",
+    description: "Interactive assessment revealing your vulnerabilities to different influence tactics"
   },
   {
     icon: "🎯",
-    title: "Fact-Based Content",
-    description: "Access credible candidate information from verified sources"
+    title: "Candidate Database",
+    description: "Comprehensive profiles with platforms, track records, and campaign strategy analysis"
   },
   {
-    icon: "👥",
-    title: "Community Forum",
-    description: "Engage in civil political discussions with fellow informed citizens"
+    icon: "💡",
+    title: "Reflection Prompts",
+    description: "Strategic questions that promote critical thinking about your voting choices"
   },
   {
     icon: "📱",
-    title: "Easy Sharing",
-    description: "Spread awareness by sharing insights with friends and family"
+    title: "Impact Analytics",
+    description: "Track how many voters reconsidered their choices after using our tools"
   }
 ];
 
@@ -61,9 +61,9 @@ export default function Features() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 bg-white">
+    <section ref={sectionRef} className="py-8 md:py-12 bg-white">
       <div className="container mx-auto px-6">
-        <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center gradient-text ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}>
+        <h2 className={`text-3xl md:text-5xl font-bold mb-8 text-center gradient-text mx-auto ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}>
           Platform Features
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

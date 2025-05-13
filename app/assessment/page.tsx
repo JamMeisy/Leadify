@@ -68,11 +68,10 @@ export default function Assessment() {
                   Voter Psychology Assessment
                 </h1>
                 
-                {/* Progress Bar */}
                 <div className="mb-8">
-                  <div className="flex items-center justify-center gap-8 mb-4">
-                    {[1, 2, 3].map((num) => (
-                      <div key={num} className="flex items-center">
+                  <div className="flex items-center justify-center mb-4">
+                    {[1, 2, 3].map((num, index) => (
+                      <React.Fragment key={num}>
                         <div className={`
                           w-12 h-12 rounded-full flex items-center justify-center
                           transition-all duration-300
@@ -85,7 +84,7 @@ export default function Assessment() {
                         </div>
                         {num < 3 && (
                           <div className={`
-                            w-16 h-1 mx-2
+                            w-24 md:w-32 h-1
                             transition-all duration-300
                             ${step > num
                               ? 'bg-[var(--primary)]'
@@ -93,7 +92,7 @@ export default function Assessment() {
                             }
                           `} />
                         )}
-                      </div>
+                      </React.Fragment>
                     ))}
                   </div>
                   <div className="text-center">

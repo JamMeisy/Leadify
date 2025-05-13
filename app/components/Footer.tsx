@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="gradient-green text-white py-12">
+    <footer className="gradient-green text-white py-8">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
@@ -21,6 +21,7 @@ export default function Footer() {
             <Link href="/#mission" className="hover:text-white/80 transition-colors">Mission</Link>
             <Link href="/#goals" className="hover:text-white/80 transition-colors">Goals</Link>
             <Link href="/#project" className="hover:text-white/80 transition-colors">Project</Link>
+            <Link href="/candidates" className="hover:text-white/80 transition-colors">Candidates</Link>
             <Link href="/assessment" className="hover:text-white/80 transition-colors">Assessment</Link>
           </div>
         </div>

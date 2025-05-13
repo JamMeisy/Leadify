@@ -29,12 +29,12 @@ export default function Vision() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="vision" className="py-16 md:py-24 bg-[var(--neutral-50)]">
+    <section ref={sectionRef} id="vision" className="py-8 md:py-12 bg-[var(--neutral-50)]">
       <div className="container mx-auto px-6">
         <div className={`max-w-4xl mx-auto ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}>
-          <div className="flex items-center gap-4 mb-8">
-            <Eye className="w-8 h-8 text-[var(--primary)]" />
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text">Our Vision</h2>
+          <div className="text-center mb-8">
+            <Eye className="w-8 h-8 text-[var(--primary)] mx-auto mb-4" />
+            <h2 className="text-3xl md:text-5xl font-bold gradient-text mx-auto">Our Vision</h2>
           </div>
           
           <div className="bg-white rounded-xl shadow-lg p-8">

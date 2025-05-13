@@ -13,11 +13,11 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[700px] flex items-center bg-gradient-to-b from-[var(--neutral-50)] to-white">
+    <section className="relative min-h-[600px] flex items-center bg-gradient-to-b from-[var(--neutral-50)] to-white">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-[var(--primary)] opacity-5 blur-3xl"></div>
       </div>
-      <div className="container mx-auto px-6 py-16 md:py-24 relative z-10">
+      <div className="container mx-auto px-6 py-12 md:py-16 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className={`text-5xl md:text-7xl font-bold mb-6 ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}>
             <span className="gradient-text">Leadify</span>
@@ -29,8 +29,8 @@ export default function Hero() {
             Understanding the Psychology of Voters and Candidates
           </p>
           <p className={`text-lg text-[var(--neutral-600)] mb-12 max-w-3xl mx-auto ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-            Empowering informed decision-making through deeper understanding of campaign dynamics, 
-            voter behavior, and political psychology.
+            Empowering Filipino voters to see beyond campaign manipulation. Learn how psychological tactics 
+            influence your decisions and make more conscious choices at the ballot box.
           </p>
           
           <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
@@ -40,37 +40,37 @@ export default function Hero() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <a href="#vision">
+            <Link href="/candidates">
               <Button size="lg" variant="outline" className="text-lg px-8">
-                Learn More
+                Analyze Candidates
                 <ChevronDown className="ml-2 h-5 w-5" />
               </Button>
-            </a>
+            </Link>
           </div>
 
           <div className={`mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
             <div className="p-6 bg-white rounded-xl shadow-lg border border-[var(--border)]">
               <h3 className="text-xl font-semibold text-[var(--primary)] mb-2">
-                Decode Tactics
+                Decode Campaign Tactics
               </h3>
               <p className="text-[var(--neutral-600)]">
-                Understand psychological strategies used in campaigns
+                Learn to identify fear-based messaging, bandwagon strategies, and emotional manipulation
               </p>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-lg border border-[var(--border)]">
               <h3 className="text-xl font-semibold text-[var(--primary)] mb-2">
-                Make Informed Choices
+                Assess Your Psychology
               </h3>
               <p className="text-[var(--neutral-600)]">
-                Vote based on facts, not manipulation
+                Discover your voting vulnerabilities through interactive scenarios
               </p>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-lg border border-[var(--border)]">
               <h3 className="text-xl font-semibold text-[var(--primary)] mb-2">
-                Strengthen Democracy
+                Compare Platforms
               </h3>
               <p className="text-[var(--neutral-600)]">
-                Build a more conscious electoral system
+                Access unbiased candidate information with psychological analysis
               </p>
             </div>
           </div>
